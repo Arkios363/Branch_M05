@@ -1,239 +1,94 @@
-import java.util.Random;
+// hecho por Alex Trebejo 
 
-// import java.util.Random;
-// import java.util.Scanner;
+import java.util.Scanner;
 
-public class EjercicioArrays {
+public class Prac1 {
     public static void main(final String[] args) {
                 
-// Scanner sc=new Scanner(System.in);
+    Scanner scan=new Scanner(System.in);
 
-//Ejercicio 1
+    String [] codis = {"CBN01", "CC01", "LC01", "P500", "P1000", "FS", "FM", "FL", "J01", "J02", "J03", "J04", "D01", "D02", "D03", "D04" };
+    String [] articles = {"Còmic blanc i negre", "Còmic color", "Llibre color", "Puzzle 500 peces", "Puzzle 1000 peces", "Figura petita", "Figura mitjana", "Figura gran", "Joc Star Trek", "Joc Star Wars", "Joc Dungeons & Dragons", "Joc World of Warcraft", "Disfressa Batman", "Disfressa Super Girl", "Disfressa Iron Man", "Disfressa Cat Woman"};
+    double [] preus = {16.20, 20.50, 32.80, 8.10, 10.30, 9.00, 12.00, 19.00, 22.40, 27.90, 45.40, 49.90, 28.50, 34.60, 28.50, 34.60};
+    int [] iva = {10, 10, 10, 10, 10, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21};
+    double [] pvp = new double [16];
+    String nif = "";
+    String [] cistellaCodi = new String [6];
+    int [] cistellaUnitats = new int [6];
+    String comprar = "";
+    double temp = 0;
+    double temp1 = 100000;
+    int contador = 0;
 
-    // int[] array = new int [6];  //6 posiciones libres para la lista
-    // int notaMax = 0;
-    // int notaMin = 10;
-    // float total = 0;    //variable para la media
+    //Calcul pvp
+    for (int i = 0; i < 16; i++){
+        pvp [i] = (preus [i] * (iva [i] / 100));
 
-    // for (int i = 0; i < array.length; i++) {        //Cuenta más 1 las posiciones de la lista
-    //     System.out.print("Inserte al nota: ");      
-    //     array[i] = sc.nextInt();                    //Rellenar cada posicion de la array con lo que insertemos 
-    // }
-    // sc.nextLine();
-
-    // for (int i = 0; i < array.length; i++) {       
-    //     if (array[i] >= notaMax) {                  //Comparamos el valor de la array con la variable maxima
-    //         notaMax = array[i];                     //Asignamos el valor a más alto del array a variable notaMax
-    //     }
-    // }
-    // for (int i = 0; i < array.length; i++) {
-    //     if (array[i] <= notaMin) {
-    //         notaMin = array[i];
-    //     }
-    // }
-    // System.out.println("La nota minima es: " + notaMin);
-    // System.out.println("La nota maxima es: " + notaMax);
-
-    // for (int i = 0; i < array.length; ++i) {
-    //     total += array[i];
-    //     }
-
-    // if (notaMin <5){
-    //     System.out.println("Modulo suspendido");
-    // } else {
-    //     System.out.printf("Mitjana: %.1f\n", ((float)total / array.length));
-    // }
-  
-    // sc.close();
-
-//Ejercicio 2
-    // int[] nota = new int [10];
-    // int [] aprobados = new int [10];
-    // int[] suspendidos = new int [10];
-    // int nA = 0;
-    // int nS = 0;
-    // int total = 0;
-
-    // //Crear array de notas a mano
-    // for (int i = 0; i < nota.length; i++) {      
-    //     System.out.print("Inserte al nota: ");      
-    //     nota[i] = sc.nextInt();       
-    // }
-
-    // //Separar las notas de la array principal a una array de aprobados y otra de suspendidos
-    // for (int i = 0; i < nota.length; i++) {
-    //     if (nota[i] >= 5){
-    //         aprobados[nA] = nota[i];
-    //         nA++;
-    //     } else {
-    //         suspendidos[nS] = nota[i];
-    //         nS++;
-    //     }
-    // }
-
-    // for (int i = 0; i < nA; i++){
-    //     System.out.print(aprobados[i] + ", ");
-    //     System.out.println();
-    // }
-
-    // for (int i = 0; i <= nA; i++){
-    //     total += aprobados[i];
-    // }
-    // System.out.printf("Mitjana: %.1f\n", ((float)total / nA));
-
-
-    // System.out.println("Han aprobado " + nA + " alumnos.");
-    // System.out.println("Han suspendido " + nS + " alumnos.");
-
-    // sc.close();
-
-//Ejercicio 3
-
-    // Random random = new Random();
-    // int[] array1 = new int [1000];
-    // int pares = 0;
-
-    // for (int i = 0; i < array1.length; i++) { 
-    //     array1[i]= random.nextInt(9900)+100;
-    //     if (array1[i] % 2 == 0 && pares < 10) {
-    //         System.out.println("Par: " + array1[i]);
-    //         pares++;
-    //     }
-    // }       
-        
-//Ejercicio 4
-
-    // int[] lista1 = new int [10];
-    // int[] lista2 = new int [10];
-    // int[] resultado = new int [10];
-    // Random random = new Random();
-
-    // for (int i = 0; i < 10; i++) {
-    //     lista1[i] = random.nextInt(99)+1;
-    //     lista2[i] = random.nextInt(99)+1;
-    //     resultado[i] = lista1[i] * lista2[i];
-    // }
-
-    // System.out.println("Lista1: ");
-    // for (int i = 0; i < 10; i++){
-    //     System.out.print(lista1[i] + " ");
-    // }
-    // System.out.println();
-
-    // System.out.println("Lista2: ");
-    // for (int i = 0; i < 10; i++){
-    //     System.out.print(lista2[i] + " ");
-    // }
-    // System.out.println();
-    
-    // System.out.println("Resultado ");
-    // for (int i = 0; i < 10; i++){
-    //     System.out.print(resultado[i] + " ");
-    // }
-
-//Ejercicio 5
-    // char[] array = new char [10];
-    // char temp;
-    // int contador = array.length -1;
-
-    // System.out.println("Lista de letras random ordenada: ");
-    // for (int i = 0; i < array.length; ++i){
-    //     array[i] = (char)(Math.random() * ('Z' - 'A' + 1) + 'A');
-    //     System.out.print((char)array[i] + " ");
-    // }
-    // System.out.println();
-
-    // System.out.println("\nLista de letas random inversas");
-    // for (int i = array.length -1; i >=0; --i){
-    //     System.out.print((char)array[i] + " ");
-    // }
-    // System.out.println();
-
-    // for (int i = 0, j = array.length -1; i < array.length / 2; i++, j--){
-    //     temp = array[j];
-    //     array[j] = array[i];
-    //     array[i] = temp;
-    // }
-    // System.out.println(array);
-
-//Ejercicio 6
-    // int[] array = new int[5];
-    // Random random = new Random();
-
-    
-    // for(int i = 0; i < array.length; i++){
-    //     array[i] = random.nextInt(5);
-    //     if (array[i] > array[i+1]) {
-    //         System.out.println("La lista está ordenada de más grande a más pequeño.");
-    //     } else if (array[i] < array[i+1]) {
-    //         System.out.println("La lista está ordenada de más pequeño a más grande.");
-    //     } else {
-    //         System.out.println("La lista no está ordenada.");
-    //     }
-    // }
-
-//Ejercicio 7
-    int[] array1 = {1, 1, 1, 1, 1};
-    int[] array2 = {2, 2, 2, 2, 2};
-    int[] resultado = new int[10];
-
-    for(int i = 0; i < array1.length; i++){
-        System.out.print(array1[i] + " ");
-        System.out.print(array2[i] + " ");
     }
 
-    for(int i = 0; i < resultado.length; i++){
+    // Mostrar el codi, descripció i pvp de l'article més barat i del més car
+    for (int i = 1; i < 16; ++i) {
+        if (pvp[i] < temp1) temp1 = pvp[i];
+        if (pvp[i] > temp) temp = pvp[i];
+        }
         
-    }
+
+    System.out.println("El producto mas caro es "+ temp);
+    System.out.println("El producto mas barato es "+ temp1);
     System.out.println();
 
+   
+    // Mostrar totes les dades de tots els articles
+    for (int i = 0; i < 16; i++){
+        System.out.print(codis[i] + " ");
+        System.out.print(articles[i] + " ");
+        System.out.print(preus[i] + " ");
+        System.out.print(iva[i] + " ");
+        System.out.println(pvp[i] + " ");
+
+    }
+
+    System.out.println();
+
+    //Pregunta NIF
+    System.out.println("Cual es tu NIF?");
+    nif = scan.nextLine();
+
+    //Pregunta al client
+    for (int i = 0; i < 6; i++){
+
+        if (comprar.equals("COMPRAR")){
+            break;
+        }
+
+        else {
+
+            System.out.println("Codi del article");
+            cistellaCodi [i] = scan.nextLine();
+
+            System.out.println("Cuantas unitats vols?");
+            cistellaUnitats [i] = scan.nextInt();
+            scan.nextLine();
+            contador++;
+
+            System.out.println("Si quiere acabar la compra escriba comprar, si quiere seguir pulse intro");
+            comprar = scan.nextLine().toUpperCase();
+        }
+    }
+        
+    System.out.println("NIF: "+nif);
+
+    for (int i = 0 ; i < contador ; i++){
+        System.out.println();
+        System.out.println("Codis: " + cistellaCodi[i]);
+        System.out.println("PVP: " + pvp [i]);
+        System.out.println("Unitats: " + cistellaUnitats[i]);
+        System.out.println("Import: " + (pvp [i] * cistellaUnitats [i]) );
+    }
 
 
 
 
-
-
-
-
-
-//Ejercicio 8
-    // int[] array = new int[10];
-    // Random random = new Random();
-    // int resultado = 0;
-    
-    // System.out.println("Lista de numeros aleatoria: ");
-    // for (int i = 0; i < array.length; i++) {
-    //     array[i] = random.nextInt(99);
-    //     System.out.print(array[i] + " ");
-    // }
-    // System.out.println();
-
-    // System.out.println("\nSuma entre extremos: ");
-    // for (int i = 0; i < array.length; i+=2) {
-    //     resultado = array[i] + array[i+1];
-    //     System.out.print(resultado + " ");
-    // }
-    // System.out.println();
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    scan.close();
     }
 }
